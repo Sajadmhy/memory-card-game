@@ -1,15 +1,24 @@
 import Header from './components/Header'
-import React from 'react';
+import React , {useState} from 'react';
 import Score from './components/Score';
 import Card from './components/Card';
 
+
+
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  const scoreCount = () => {
+    setCount(count+1);
+  }
+
   return (
     <div>
       <Header />
-      <Score score={1} bestScore={3} />
+      <Score score={count} bestScore={3} />
       <div className="display">
-        <Card src={'https://heldersrvio.github.io/memory-card-game/static/media/anne.d9d14c90.jpg'} caption={'Anne Boonchuy'} />
+        <div onClick={scoreCount}><Card src={'https://heldersrvio.github.io/memory-card-game/static/media/anne.d9d14c90.jpg'} caption={'Anne Boonchuy'} /></div>
         <Card src={'https://heldersrvio.github.io/memory-card-game/static/media/croaker.824ac0d7.png'} caption={'Sadie Croaker'} />
         <Card src={'https://heldersrvio.github.io/memory-card-game/static/media/grime.6e597003.png'} caption={'Captain Grime'}/>
         <Card src={'https://heldersrvio.github.io/memory-card-game/static/media/hoppop.5badcd86.png'} caption={'Hop Pop Plantar'}/>
