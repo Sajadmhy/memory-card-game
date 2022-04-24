@@ -3,6 +3,7 @@ function Score (props) {
         <div>
             Score: {props.score}
             <br/>
+            <br/>
             Best Score: {props.bestScore}
         </div>
     )
